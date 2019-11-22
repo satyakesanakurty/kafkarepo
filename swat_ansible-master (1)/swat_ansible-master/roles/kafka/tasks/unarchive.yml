@@ -1,0 +1,8 @@
+- name: Extract Kafka artifacts(tgz)
+  unarchive: 
+    src: /opt/kafka_2.11-2.2.0.tgz
+    dest: /opt
+    remote_src: yes  
+  become: yes
+  become_method: sudo
+

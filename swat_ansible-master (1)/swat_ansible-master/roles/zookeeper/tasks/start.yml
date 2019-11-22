@@ -1,0 +1,4 @@
+- name: Start Zookeeper
+  shell: /opt/kafka_2.11-2.2.0/bin/zookeeper-server-start.sh -daemon  /opt/kafka_2.11-2.2.0/config/zookeeper.properties
+  become: yes
+  become_method: sudo 

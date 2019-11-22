@@ -1,0 +1,4 @@
+- name: Stop Zookeeper
+  shell: /opt/kafka_2.11-2.2.0/bin/zookeeper-server-stop.sh
+  become: yes
+  become_method: sudo

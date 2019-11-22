@@ -1,0 +1,12 @@
+- name: Status Zookeeper
+  import_tasks: status.yml
+  tags: [ status_zookeeper, start_kafka_broker, start_zookeeper, stop_zookeeper ] 
+- name: Start Zookeeper
+  import_tasks: start.yml
+  tags: start_zookeeper
+  when: zookeeper_service_status.rc == 1
+- name: Stop Zookeeper
+  import_tasks: stop.yml
+  tags: stop_zookeeper
+  when: zookeeper_service_status.rc == 0
+

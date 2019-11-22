@@ -1,0 +1,9 @@
+- name: Zookeeper Status
+  shell : ps aux | grep zookeeper | grep -v grep 
+  ignore_errors: yes
+  register: zookeeper_service_status
+
+- name: Zookeeper service (running or stopped) report
+  debug:
+    msg: "Zookeeper server is {% if zookeeper_service_status.rc != 0 %}not {% endif  %}running"
+   

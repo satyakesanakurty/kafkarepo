@@ -1,0 +1,6 @@
+- name: Download Kafka Artifacts
+  get_url:
+    url: http://mirrors.estointernet.in/apache/kafka/2.2.0/kafka_2.11-2.2.0.tgz
+    dest: /opt
+  become: yes
+  become_method: sudo

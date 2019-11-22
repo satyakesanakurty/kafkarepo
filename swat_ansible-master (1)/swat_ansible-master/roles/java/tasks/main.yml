@@ -1,0 +1,3 @@
+- name: Install JAVA
+  import_tasks: install.yml
+  tags: download

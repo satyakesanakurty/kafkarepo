@@ -1,0 +1,8 @@
+- name: Print Zookeeper Status
+  debug:
+    msg: "zookeeper_service_status.rc = {{zookeeper_service_status.rc}} "
+- name: Start Kafka Broker
+  shell: /opt/kafka_2.11-2.2.0/bin/kafka-server-start.sh -daemon /opt/kafka_2.11-2.2.0/config/server.properties
+  become: yes
+  become_method: sudo
+  when:  zookeeper_service_status.rc == 0

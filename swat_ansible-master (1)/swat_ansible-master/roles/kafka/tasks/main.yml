@@ -1,0 +1,15 @@
+- name: Download Kafka Artifacts
+  import_tasks: download.yml
+  tags: download
+
+- name: Unarchive Kafka Artifacts
+  import_tasks: unarchive.yml
+  tags: download
+
+- name: Start Kafka broker
+  import_tasks: start.yml
+  tags: start_kafka_broker
+
+- name: Stop Kafka Broker
+  import_tasks: stop.yml
+  tags: stop_kafka_broker
